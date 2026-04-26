@@ -1,0 +1,73 @@
+{
+  "name": "mylistryx/net23-advanced",
+  "description": "Net23 advanced",
+  "keywords": [
+    "yii2",
+    "framework",
+    "advanced",
+    "net23"
+  ],
+  "homepage": "https://www.net23.ru/",
+  "type": "project",
+  "license": "BSD-3-Clause",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.5.0",
+    "yiisoft/yii2": "~2.0.54",
+    "yiisoft/yii2-bootstrap5": "~2.0.51",
+    "yiisoft/yii2-symfonymailer": "~2.0.4",
+    "yiisoft/yii2-redis": "~2.1.0",
+    "yiisoft/yii2-queue": "~2.3.8",
+    "yiisoft/yii2-imagine": "~2.3.1",
+    "ramsey/uuid": "^4.9",
+    "ext-curl": "*",
+    "ext-intl": "*",
+    "ext-json": "*",
+    "ext-pdo": "*",
+    "ext-xml": "*"
+  },
+  "require-dev": {
+    "larapack/dd": "~1.1",
+    "yiisoft/yii2-debug": "~2.1.28",
+    "yiisoft/yii2-gii": "~2.2.7",
+    "yiisoft/yii2-faker": "~2.0.5",
+    "phpunit/phpunit": "~13.0.6",
+    "codeception/codeception": "~5.3.5",
+    "codeception/lib-innerbrowser": "~4.1.0",
+    "codeception/module-asserts": "~3.3.0",
+    "codeception/module-yii2": "~2.0.5",
+    "codeception/module-filesystem": "~3.0.2",
+    "codeception/verify": "*"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "common\\tests\\": [
+        "common/tests/",
+        "common/tests/_support"
+      ],
+      "backend\\tests\\": [
+        "backend/tests/",
+        "backend/tests/_support"
+      ],
+      "frontend\\tests\\": [
+        "frontend/tests/",
+        "frontend/tests/_support"
+      ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    },
+    "process-timeout": 1800,
+    "fxp-asset": {
+      "enabled": false
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}
