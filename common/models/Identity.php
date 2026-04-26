@@ -3,13 +3,12 @@
 namespace common\models;
 
 use common\components\behaviors\DateTimeBehavior;
+use common\components\db\ActiveRecord;
 use common\enums\IdentityStatus;
 use common\enums\Tables;
 use Yii;
 use yii\base\Exception;
 use yii\base\NotSupportedException;
-use yii\behaviors\TimestampBehavior;
-use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
 /**
@@ -23,28 +22,21 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property string $auth_key
  * @property int $status
- * @property int $created_at
- * @property int $updated_at
+ * @property string $created_at
+ * @property string $updated_at
  * @property string $password write-only password
  */
 class Identity extends ActiveRecord implements IdentityInterface
 {
+    public false|string $createdAtAttribute = 'created_at';
+    public false|string $updatedAtAttribute = 'updated_at';
+
     /**
      * {@inheritdoc}
      */
     public static function tableName(): string
     {
         return Tables::Identity->value;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors(): array
-    {
-        return [
-            DateTimeBehavior::class,
-        ];
     }
 
     /**

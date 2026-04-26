@@ -2,6 +2,7 @@
 
 use yii\db\Connection as DbConnection;
 use yii\helpers\ArrayHelper;
+use yii\i18n\PhpMessageSource;
 use yii\log\FileTarget;
 use yii\queue\redis\Queue;
 use yii\redis\Cache;
@@ -18,7 +19,7 @@ return [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
-    'bootstrap'           => ['log'],
+    'bootstrap'  => ['log'],
     'vendorPath' => dirname(__DIR__, 2) . '/vendor',
     'components' => [
         'cache'  => [
@@ -46,11 +47,21 @@ return [
             'viewPath'         => '@common/mail',
             'useFileTransport' => true,
         ],
-        'log' => [
+        'log'    => [
             'targets' => [
                 [
                     'class'  => FileTarget::class,
                     'levels' => ['error', 'warning'],
+                ],
+            ],
+        ],
+        'i18n'   => [
+            'translations' => [
+                'app*' => [
+                    'class'   => PhpMessageSource::class,
+                    'fileMap' => [
+                        '*' => 'app.php',
+                    ],
                 ],
             ],
         ],

@@ -2,16 +2,13 @@
 
 namespace common\components\controllers;
 
+use common\components\user\WebUser;
 use Yii;
 use yii\web\Controller;
 use yii\web\Response;
-use common\components\user\WebUser;
 
 /**
  * @property WebUser $user
- *
- * @see self::getIsGuest()
- * @property-read bool $isGuest
  */
 abstract class WebController extends Controller
 {
@@ -180,20 +177,5 @@ abstract class WebController extends Controller
         $this->addFlash('dark', $message, $category, $params, $removeAfterAccess);
 
         return $this;
-    }
-
-    public function post(?string $name = null, mixed $defaultValue = null): ?array
-    {
-        return Yii::$app->request->post($name, $defaultValue);
-    }
-
-    public function get(?string $name = null, mixed $defaultValue = null): ?array
-    {
-        return Yii::$app->request->get($name, $defaultValue);
-    }
-
-    public function getIsGuest(): bool
-    {
-        return Yii::$app->user->isGuest;
     }
 }

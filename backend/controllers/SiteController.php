@@ -2,15 +2,15 @@
 
 namespace backend\controllers;
 
+use common\components\actions\LoginAction;
+use common\components\actions\LogoutAction;
+use common\components\actions\RenderAction;
 use common\components\controllers\WebController;
-use common\forms\LoginForm;
-use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\ErrorAction;
-use yii\web\Response;
 
-class SiteController extends WebController
+final class SiteController extends WebController
 {
     public function behaviors(): array
     {
@@ -41,41 +41,10 @@ class SiteController extends WebController
     public function actions(): array
     {
         return [
-            'error' => [
-                'class' => ErrorAction::class,
-            ],
+            'error'  => ErrorAction::class,
+            'login'  => LoginAction::class,
+            'logout' => LogoutAction::class,
+            'index'  => RenderAction::class,
         ];
-    }
-
-    public function actionIndex(): Response
-    {
-        return $this->render('index');
-    }
-
-    public function actionLogin(): Response
-    {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-
-        $this->layout = 'blank';
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
-
-        $model->password = '';
-
-        return $this->render('login', [
-            'model' => $model,
-        ]);
-    }
-
-    public function actionLogout(): Response
-    {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
     }
 }
