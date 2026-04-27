@@ -2,9 +2,9 @@
 
 namespace common\tests;
 
-use common\tests\_generated\UnitTesterActions;
 use Codeception\Actor;
 use Codeception\Lib\Friend;
+use common\tests\_generated\UnitTesterActions;
 
 /**
  * Inherited Methods

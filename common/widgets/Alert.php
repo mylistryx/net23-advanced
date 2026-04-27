@@ -3,8 +3,8 @@
 namespace common\widgets;
 
 use Yii;
+use yii\bootstrap5\Alert as BootstrapAlert;
 use yii\bootstrap5\Widget;
-use \yii\bootstrap5\Alert as BootstrapAlert;
 use yii\helpers\ArrayHelper;
 
 /**

@@ -2,9 +2,9 @@
 
 namespace frontend\tests;
 
-use frontend\tests\_generated\UnitTesterActions;
 use Codeception\Actor;
 use Codeception\Lib\Friend;
+use frontend\tests\_generated\UnitTesterActions;
 
 /**
  * Inherited Methods

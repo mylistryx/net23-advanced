@@ -2,9 +2,9 @@
 
 namespace common\components\actions\crud;
 
+use common\components\actions\BaseAction;
 use common\components\controllers\CrudController;
 use common\components\db\ActiveRecord;
-use common\components\actions\BaseAction;
 use Yii;
 use yii\web\NotFoundHttpException;
 

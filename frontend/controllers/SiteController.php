@@ -7,18 +7,10 @@ use common\components\actions\LogoutAction;
 use common\components\actions\RenderAction;
 use common\components\controllers\WebController;
 use frontend\forms\ContactForm;
-use frontend\forms\PasswordResetRequestForm;
-use frontend\forms\ResendVerificationEmailForm;
-use frontend\forms\ResetPasswordForm;
-use frontend\forms\SignupForm;
-use frontend\forms\VerifyEmailForm;
 use Yii;
-use yii\base\Exception;
-use yii\base\InvalidArgumentException;
 use yii\captcha\CaptchaAction;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
-use yii\web\BadRequestHttpException;
 use yii\web\ErrorAction;
 use yii\web\Response;
 

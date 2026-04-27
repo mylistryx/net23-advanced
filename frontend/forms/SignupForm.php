@@ -2,7 +2,6 @@
 
 namespace frontend\forms;
 
-use common\enums\IdentityStatus;
 use common\models\Identity;
 use Yii;
 use yii\base\Exception;

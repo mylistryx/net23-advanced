@@ -2,11 +2,10 @@
 
 namespace common\models;
 
-use Override;
-use common\components\behaviors\DateTimeBehavior;
 use common\components\db\ActiveRecord;
 use common\enums\IdentityStatus;
 use common\enums\Tables;
+use Override;
 use Yii;
 use yii\base\Exception;
 use yii\base\NotSupportedException;
