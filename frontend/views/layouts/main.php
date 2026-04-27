@@ -62,7 +62,7 @@ AppAsset::register($this);
                 'items'   => [
                         [
                                 'label'   => 'Signup',
-                                'url'     => ['/site/signup'],
+                                'url'     => ['/signup/index'],
                                 'visible' => Yii::$app->user->isGuest,
                         ],
                         [

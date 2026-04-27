@@ -14,7 +14,7 @@ use yii\web\Response;
 final class SignupController extends WebController
 {
 
-    public function actionResendVerificationEmail(): Response
+    public function actionResend(): Response
     {
         $model = new ResendVerificationEmailForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -25,7 +25,7 @@ final class SignupController extends WebController
             $this->error('Sorry, we are unable to resend verification email for the provided email address.');
         }
 
-        return $this->render('resendVerificationEmail', [
+        return $this->render('resend', [
             'model' => $model,
         ]);
     }
@@ -47,10 +47,11 @@ final class SignupController extends WebController
         } else {
             $this->error('Sorry, we are unable to verify your account with provided token.');
         }
+
         return $this->goHome();
     }
 
-    public function actionSignup(): Response
+    public function actionIndex(): Response
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
@@ -58,7 +59,7 @@ final class SignupController extends WebController
             return $this->goHome();
         }
 
-        return $this->render('signup', [
+        return $this->render('index', [
             'model' => $model,
         ]);
     }

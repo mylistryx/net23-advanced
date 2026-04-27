@@ -8,7 +8,7 @@
 use common\models\Identity;
 use yii\web\View;
 
-$verifyLink = Yii::$app->urlManager->createAbsoluteUrl(['site/verify-email', 'token' => $identity->verification_token]);
+$verifyLink = Yii::$app->urlManager->createAbsoluteUrl(['signup/verify-email', 'token' => $identity->verification_token]);
 ?>
 Hello <?= $identity->username ?>,
 
