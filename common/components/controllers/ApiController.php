@@ -2,11 +2,10 @@
 
 namespace comomon\components\controllers;
 
-use common\components\controllers\WebController;
 use yii\rest\Controller;
 use yii\web\Response;
 
-abstract class ApiController extends WebController
+abstract class ApiController extends Controller
 {
     public function behaviors(): array
     {
