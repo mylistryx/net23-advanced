@@ -8,7 +8,7 @@
 use common\models\Identity;
 use yii\web\View;
 
-$resetLink = Yii::$app->urlManager->createAbsoluteUrl(['site/reset-password', 'token' => $identity->password_reset_token]);
+$resetLink = Yii::$app->urlManager->createAbsoluteUrl(['password/reset', 'token' => $identity->password_reset_token]);
 ?>
 Hello <?= $identity->username ?>,
 

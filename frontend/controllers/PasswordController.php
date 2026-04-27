@@ -14,7 +14,7 @@ use yii\web\Response;
 final class PasswordController extends WebController
 {
 
-    public function actionRequestPasswordReset(): Response
+    public function actionIndex(): Response
     {
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -27,7 +27,7 @@ final class PasswordController extends WebController
             $this->error('Sorry, we are unable to reset password for the provided email address.');
         }
 
-        return $this->render('requestPasswordResetToken', [
+        return $this->render('index', [
             'model' => $model,
         ]);
     }
@@ -37,7 +37,7 @@ final class PasswordController extends WebController
      * @throws Exception
      * @throws \yii\db\Exception
      */
-    public function actionResetPassword(string $token): Response
+    public function actionReset(string $token): Response
     {
         try {
             $model = new ResetPasswordForm($token);
@@ -51,7 +51,7 @@ final class PasswordController extends WebController
             return $this->goHome();
         }
 
-        return $this->render('resetPassword', [
+        return $this->render('reset', [
             'model' => $model,
         ]);
     }
