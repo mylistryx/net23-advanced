@@ -32,7 +32,7 @@ class ResendVerificationEmailCest
 
     public function _before(FunctionalTester $I): void
     {
-        $I->amOnRoute('/site/resend-verification-email');
+        $I->amOnRoute('/signup/resend-verification-email');
     }
 
     protected function formParams($email): array

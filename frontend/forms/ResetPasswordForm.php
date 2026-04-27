@@ -12,16 +12,13 @@ class ResetPasswordForm extends Model
 {
     public ?string $password = null;
 
-    private ?Identity $_user = null;
+    private ?Identity $_identity = null;
 
 
-    public function __construct($token, $config = [])
+    public function __construct(string $token, array $config = [])
     {
-        if (empty($token) || !is_string($token)) {
-            throw new InvalidArgumentException('Password reset token cannot be blank.');
-        }
-        $this->_user = Identity::findByPasswordResetToken($token);
-        if (!$this->_user) {
+        $this->_identity = Identity::findByPasswordResetToken($token);
+        if (!$this->_identity) {
             throw new InvalidArgumentException('Wrong password reset token.');
         }
         parent::__construct($config);
@@ -44,11 +41,11 @@ class ResetPasswordForm extends Model
      */
     public function resetPassword(): bool
     {
-        $user = $this->_user;
-        $user->setPassword($this->password);
-        $user->removePasswordResetToken();
-        $user->generateAuthKey();
+        $identity = $this->_identity;
+        $identity->setPassword($this->password);
+        $identity->removePasswordResetToken();
+        $identity->generateAuthKey();
 
-        return $user->save(false);
+        return $identity->save(false);
     }
 }

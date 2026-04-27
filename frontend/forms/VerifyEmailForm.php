@@ -15,11 +15,8 @@ class VerifyEmailForm extends Model
     private ?Identity $_identity = null;
 
 
-    public function __construct(?string $token, ?array $config = [])
+    public function __construct(string $token, array $config = [])
     {
-        if (empty($token) || !is_string($token)) {
-            throw new InvalidArgumentException('Verify email token cannot be blank.');
-        }
         $this->_identity = Identity::findByVerificationToken($token);
         if (!$this->_identity) {
             throw new InvalidArgumentException('Wrong verify email token.');
