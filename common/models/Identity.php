@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use Override;
 use common\components\behaviors\DateTimeBehavior;
 use common\components\db\ActiveRecord;
 use common\enums\IdentityStatus;
@@ -28,7 +29,9 @@ use yii\web\IdentityInterface;
  */
 class Identity extends ActiveRecord implements IdentityInterface
 {
+    #[Override]
     public false|string $createdAtAttribute = 'created_at';
+    #[Override]
     public false|string $updatedAtAttribute = 'updated_at';
 
     /**
@@ -42,6 +45,7 @@ class Identity extends ActiveRecord implements IdentityInterface
     /**
      * {@inheritdoc}
      */
+    #[Override]
     public function rules(): array
     {
         return [

@@ -27,11 +27,11 @@ class ResetPasswordFormTest extends Unit
 
     public function testResetWrongToken(): void
     {
-        $this->tester->expectThrowable(InvalidArgumentException::class, function () {
+        $this->tester->expectThrowable(InvalidArgumentException::class, function (): void {
             new ResetPasswordForm('');
         });
 
-        $this->tester->expectThrowable(InvalidArgumentException::class, function () {
+        $this->tester->expectThrowable(InvalidArgumentException::class, function (): void {
             new ResetPasswordForm('notexistingtoken_1391882543');
         });
     }

@@ -2,6 +2,7 @@
 
 namespace frontend\tests;
 
+use frontend\tests\_generated\UnitTesterActions;
 use Codeception\Actor;
 use Codeception\Lib\Friend;
 
@@ -22,7 +23,7 @@ use Codeception\Lib\Friend;
  */
 class UnitTester extends Actor
 {
-    use _generated\UnitTesterActions;
+    use UnitTesterActions;
     /**
      * Define custom actions here
      */

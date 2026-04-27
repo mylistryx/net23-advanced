@@ -11,8 +11,8 @@ use common\components\actions\crud\ViewAction;
 
 abstract class CrudController extends WebController
 {
-    protected ?string $modelClass;
-    protected ?string $searchModelClass;
+    protected ?string $modelClass = null;
+    protected ?string $searchModelClass = null;
     protected ?string $isActiveAttribute = 'is_active';
     protected array $disabledActions = [];
 

@@ -2,6 +2,7 @@
 
 namespace backend\tests;
 
+use backend\tests\_generated\FunctionalTesterActions;
 use Codeception\Actor;
 use Codeception\Lib\Friend;
 
@@ -22,7 +23,7 @@ use Codeception\Lib\Friend;
  */
 class FunctionalTester extends Actor
 {
-    use _generated\FunctionalTesterActions;
+    use FunctionalTesterActions;
     /**
      * Define custom actions here
      */

@@ -28,18 +28,18 @@ class VerifyEmailFormTest extends Unit
 
     public function testVerifyWrongToken(): void
     {
-        $this->tester->expectThrowable(InvalidArgumentException::class, function () {
+        $this->tester->expectThrowable(InvalidArgumentException::class, function (): void {
             new VerifyEmailForm('');
         });
 
-        $this->tester->expectThrowable(InvalidArgumentException::class, function () {
+        $this->tester->expectThrowable(InvalidArgumentException::class, function (): void {
             new VerifyEmailForm('notexistingtoken_1391882543');
         });
     }
 
     public function testAlreadyActivatedToken(): void
     {
-        $this->tester->expectThrowable(InvalidArgumentException::class, function () {
+        $this->tester->expectThrowable(InvalidArgumentException::class, function (): void {
             new VerifyEmailForm('already_used_token_1548675330');
         });
     }

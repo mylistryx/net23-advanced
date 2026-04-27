@@ -15,7 +15,7 @@ trait EnumToArrayTrait
     {
         $arr = self::array();
 
-        $translateSection .= __CLASS__;
+        $translateSection .= self::class;
 
         foreach ($arr as &$name) {
             $name = $itemsPrefix . Yii::t($translateSection, $name);

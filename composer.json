@@ -37,7 +37,8 @@
     "codeception/module-asserts": "~3.3.0",
     "codeception/module-yii2": "~2.0.5",
     "codeception/module-filesystem": "~3.0.2",
-    "codeception/verify": "*"
+    "codeception/verify": "*",
+    "rector/rector": "^2.4"
   },
   "autoload-dev": {
     "psr-4": {

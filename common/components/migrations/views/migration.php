@@ -1,3 +1,8 @@
+<?php
+/**
+ * @var string $className
+ */
+?>
 <?= '<?php' . PHP_EOL ?>
 
 use common\enums\Tables;
